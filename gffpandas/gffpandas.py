@@ -13,8 +13,10 @@ class Gff3DataFrame(object):
 
     """
 
-    def __init__(self, input_gff_file=None, input_df=None, input_header=None) -> None:
+    def __init__(self, input_gff_file=None, input_df=None, input_header=None, **kwargs) -> None:
         """Create an instance."""
+        self._dtype = dtype
+        
         if input_gff_file is not None:
             self._gff_file = input_gff_file
             self._read_gff3_to_df()
@@ -43,6 +45,7 @@ class Gff3DataFrame(object):
                 "phase",
                 "attributes",
             ],
+            **kwargs
         )
         return self.df
 
