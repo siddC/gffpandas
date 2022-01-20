@@ -2,8 +2,8 @@ import itertools
 import pandas as pd
 
 
-def read_gff3(input_file):
-    return Gff3DataFrame(input_file)
+def read_gff3(input_file, **kwargs):
+    return Gff3DataFrame(input_gff_file=input_file, **kwargs)
 
 
 class Gff3DataFrame(object):
