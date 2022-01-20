@@ -17,13 +17,13 @@ class Gff3DataFrame(object):
         """Create an instance."""
         if input_gff_file is not None:
             self._gff_file = input_gff_file
-            self._read_gff3_to_df()
+            self._read_gff3_to_df(**kwargs)
             self._read_gff_header()
         else:
             self.df = input_df
             self.header = input_header
 
-    def _read_gff3_to_df(self) -> pd.DataFrame:
+    def _read_gff3_to_df(self, **kwargs) -> pd.DataFrame:
         """Create a pandas dataframe.
 
         By the pandas library the gff3 file is read and
